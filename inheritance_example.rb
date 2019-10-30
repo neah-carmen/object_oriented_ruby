@@ -19,7 +19,10 @@ end
 
 class Car < Vehicle
   def initialize
-    super
+    super(input_options)
+    @fuel = input_options[:fuel]
+    @make = input_options[:make]
+    @model = input_options[:model]
   end
 
   def honk_horn
@@ -29,9 +32,11 @@ end
 
 class Bike < Vehicle
   def initialize
-    super
+    super(input_options)
+    @type = input_options[:type]
+    @gears = input_options[:gears]
   end
-  
+
   def ring_bell
     puts "Ring ring!"
   end
