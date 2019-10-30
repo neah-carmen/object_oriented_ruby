@@ -18,12 +18,20 @@ class Vehicle
 end
 
 class Car < Vehicle
+  def initialize
+    super
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
 class Bike < Vehicle
+  def initialize
+    super
+  end
+  
   def ring_bell
     puts "Ring ring!"
   end

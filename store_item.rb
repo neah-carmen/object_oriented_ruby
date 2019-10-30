@@ -57,13 +57,60 @@ class StoreItem
   end
 end
 
-winter_coat = StoreItem.new(brand: 'Canada Goose', color: 'red', price: '500', stock: '9', currency: '$')
-rain_coat = StoreItem.new(brand: 'Lands End', color: 'yellow', price: '80', stock: '4', currency: '$')
-denim_jacket = StoreItem.new(brand: 'GAP', color: 'blue', price: '50', stock: '1', currency: '$')
+class OuterWear < StoreItem
+  attr_accessor :insulation, :warmth_rating
+  def initialize(input_options)
+    super(input_options)
+    @insulation = input_options[:insulation]
+    @warmth_rating = input_options[:warmth_rating]
+  end
+end
+
+class FashionWear < StoreItem
+  def initialize(input_options)
+    super(input_options)
+    @sale = input_options[:sale]
+  end
+
+  def sale
+    if @sale == true
+      puts 'On sale!'
+    end
+  end
+end
+
+winter_coat = OuterWear.new(
+  brand: 'Canada Goose',
+  color: 'red',
+  price: '500',
+  stock: '9',
+  currency: '$',
+  insulation: 'fleece',
+  warmth_rating: 'very warm'
+)
+rain_coat = OuterWear.new(
+  brand: 'Lands End',
+  color: 'yellow',
+  price: '80',
+  stock: '4',
+  currency: '$',
+  insulation: 'none',
+  warmth_rating: 'warm'
+)
+denim_jacket = FashionWear.new(
+  brand: 'GAP',
+  color: 'blue',
+  price: '50',
+  stock: '1',
+  currency: '$',
+  sale: true
+)
 
 p denim_jacket.stock
 denim_jacket.item_sold
 p denim_jacket.stock
+denim_jacket.sale
 p "The brand is #{winter_coat.brand} and its color is #{winter_coat.color}."
+p winter_coat.warmth_rating
 p rain_coat.price
 p rain_coat.tax_total
