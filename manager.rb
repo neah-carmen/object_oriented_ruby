@@ -35,6 +35,12 @@ class Manager < Employee
       employee.give_annual_raise
     end
   end
+
+  def fire_all_employees
+    @employees.each do |employee|
+      employee.active = false
+    end
+  end
 end
 
 employee1 = Employee.new(
@@ -64,3 +70,6 @@ manager.send_report
 p manager
 manager.give_all_raises
 p manager
+manager.fire_all_employees
+p employee1.active
+p employee2.active
