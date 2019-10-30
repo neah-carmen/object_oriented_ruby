@@ -27,7 +27,7 @@ class Car < Vehicle
   end
 
   def honk_horn
-    puts "Beeeeeeep!"
+    puts 'Beeeeeeep!'
   end
 end
 
@@ -40,6 +40,6 @@ class Bike < Vehicle
   end
 
   def ring_bell
-    puts "Ring ring!"
+    puts 'Ring ring!'
   end
 end
