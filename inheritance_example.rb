@@ -1,5 +1,5 @@
 class Vehicle
-  def initialize
+  def initialize(input_options)
     @speed = 0
     @direction = 'north'
   end
@@ -18,7 +18,8 @@ class Vehicle
 end
 
 class Car < Vehicle
-  def initialize
+  def initialize(input_options)
+    attr_accessor :fuel, :make, :model
     super(input_options)
     @fuel = input_options[:fuel]
     @make = input_options[:make]
@@ -31,7 +32,8 @@ class Car < Vehicle
 end
 
 class Bike < Vehicle
-  def initialize
+  def initialize(input_options)
+    attr_accessor :type, :gears
     super(input_options)
     @type = input_options[:type]
     @gears = input_options[:gears]
