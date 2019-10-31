@@ -1,4 +1,9 @@
 module Drivable
+  def initialize
+    @speed = 0
+    @direction = 'north'
+  end
+
   def accelerate
     @speed += 10
   end
@@ -14,6 +19,7 @@ end
 
 class Car
   include Drivable
+
   def initialize(input_options)
     attr_accessor :fuel, :make, :model
     @fuel = input_options[:fuel]
@@ -28,6 +34,7 @@ end
 
 class Bike
   include Drivable
+
   def initialize(input_options)
     attr_accessor :type, :gears
     @type = input_options[:type]
