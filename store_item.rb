@@ -79,9 +79,9 @@ end
 #   end
 # end
 
-require "./clothing.rb"
-require "./outer_wear.rb"
-require "./fashion_wear.rb"
+require './clothing.rb'
+require './outer_wear.rb'
+require './fashion_wear.rb'
 
 winter_coat = OuterWear.new(
   brand: 'Canada Goose',
