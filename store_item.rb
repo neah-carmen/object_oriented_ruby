@@ -29,55 +29,59 @@ end
 # Exercise: Replace your “reader” and “writer” methods using the attr_reader and attr_writer shortcuts!
 
 # class for storing items
-class StoreItem
-  attr_accessor :brand, :color
-  attr_reader :stock, :currency
-  attr_writer :price
+# class Clothing
+#   attr_accessor :brand, :color
+#   attr_reader :stock, :currency
+#   attr_writer :price
 
-  def initialize(input_options)
-    @brand = input_options[:brand]
-    @color = input_options[:color]
-    @price = input_options[:price]
-    @stock = input_options[:stock]
-    @currency = input_options[:currency]
-  end
+#   def initialize(input_options)
+#     @brand = input_options[:brand]
+#     @color = input_options[:color]
+#     @price = input_options[:price]
+#     @stock = input_options[:stock]
+#     @currency = input_options[:currency]
+#   end
 
-  def item_sold
-    @stock = @stock.to_i - 1
-  end
+#   def item_sold
+#     @stock = @stock.to_i - 1
+#   end
 
-  def price
-    "#{@curreny}#{@price}"
-  end
+#   def price
+#     "#{@curreny}#{@price}"
+#   end
 
-  def tax_total
-    chicago_tax = 1.1025
-    @tax_total = @price.to_f * chicago_tax.to_f
-    "#{@currency}#{@tax_total}"
-  end
-end
+#   def tax_total
+#     chicago_tax = 1.1025
+#     @tax_total = @price.to_f * chicago_tax.to_f
+#     "#{@currency}#{@tax_total}"
+#   end
+# end
 
-class OuterWear < StoreItem
-  attr_accessor :insulation, :warmth_rating
-  def initialize(input_options)
-    super(input_options)
-    @insulation = input_options[:insulation]
-    @warmth_rating = input_options[:warmth_rating]
-  end
-end
+# class OuterWear < Clothing
+#   attr_accessor :insulation, :warmth_rating
+#   def initialize(input_options)
+#     super(input_options)
+#     @insulation = input_options[:insulation]
+#     @warmth_rating = input_options[:warmth_rating]
+#   end
+# end
 
-class FashionWear < StoreItem
-  def initialize(input_options)
-    super(input_options)
-    @sale = input_options[:sale]
-  end
+# class FashionWear < Clothing
+#   def initialize(input_options)
+#     super(input_options)
+#     @sale = input_options[:sale]
+#   end
 
-  def sale
-    if @sale == true
-      puts 'On sale!'
-    end
-  end
-end
+#   def sale
+#     if @sale == true
+#       puts 'On sale!'
+#     end
+#   end
+# end
+
+require "./clothing.rb"
+require "./outer_wear.rb"
+require "./fashion_wear.rb"
 
 winter_coat = OuterWear.new(
   brand: 'Canada Goose',
